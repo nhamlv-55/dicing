@@ -2,11 +2,15 @@
 <html>
 <body>
 <style>
+body {
+	font-family: verdana;
+}
 #diceWrapper{
 	width: 90%;
 	margin-left: auto;
 	margin-right:auto;
 	text-align: center;
+	padding: 0.5em;
 }
 #roll {
     background-color: #008CBA; /* Green */
@@ -47,22 +51,15 @@
 	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
-	font-size: 4em;
-	label {
-		width: 180px;
-	}
+	font-size: 2em;
 }
-.delete {
-	display: inline-block;
-    width:20px;
-    height:20px;
-    border-radius: 50%;
-	border:none;
-    background-color:#f44336;
-	color:white;
-    text-align:center;
-    text-decoration:none;
-    font-size:40px;
+h2{
+	text-align:center;
+	font-size: 4em;
+	width: 90%;
+	padding: 0.1em;
+	margin-left: auto;
+	margin-right:auto;	
 }
 .dice{display:inline-block;min-height:1em;padding-left:1em;background-size:1em;background-repeat:no-repeat;}
 .dice-1{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cg transform='translate(113.25%2C-494.1)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-406.5%2C374.7)'%3E%3Crect x='588' y='240.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(337.5%2C87.5)' cx='325' cy='227.4' r='12.5' style='fill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
@@ -72,21 +69,22 @@
 .dice-5{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(89.2%2C-510.5)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-194.9%2C372.3)'%3E%3Crect x='213' y='277.9' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(-73.5%2C89)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-73.5%2C161)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-1.5%2C89)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-1.5%2C161)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-37.5%2C125)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
 .dice-6{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(86.2%2C-500.6)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-98.2%2C356.2)'%3E%3Crect x='25.5' y='290.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(-261%2C101.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-261%2C173.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-261%2C137.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C101.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C173.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C137.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");}
 </style>
-<h2 id="title">.</h2>
+<h2 id="title"></h2>
 <div id ="diceWrapper">
 	<span style="font-size: 8em;" class="dice dice-1" id="dice1" title="Dice 1"></span>
 	<span style="font-size: 8em;" class="dice dice-3" id="dice2" title="Dice 2"></span>
 </div>
 
+<h2 id="next"></h2>
 <button id="roll" onClick="roll()">Roll the dice</button>
-<div>
-<input type = "checkbox" id = "monopoly" style="width: 2em"></input><label style="text-align: center; font-size: 2em">One more turn for double 6s</label>
+<div style = "width: 90%; margin-left: auto; margin-right: auto; padding: 0.2em;">
+<input type = "checkbox" id = "monopoly" style="transform: scale(2)">
+<label style="text-align: center; font-size: 2em; padding: 0.2em;">One more turn for double 6s</label>
 </div>
 <div id = "player-list"></div>
 <input type="text" id="playerName"></input>
 <button id="addPlayer" onClick="addPlayer()">Add player</button>
 
-<h2 id="next"></h2>
 
 <script>
 var player_list = []
@@ -139,9 +137,9 @@ function renderPlayerList(){
 		aPlayer.setAttribute("class", "player")
 		var aName = document.createElement('label')
 		aName.innerHTML = player_list[i]
-		var deleteButton = document.createElement('button')
-		deleteButton.setAttribute("class", "delete")
-		deleteButton.innerHTML = "-"
+		var deleteButton = document.createElement('label')
+		deleteButton.setAttribute("style", "color: red;")
+		deleteButton.innerHTML = " - "
 		deleteButton.id = i
 		deleteButton.setAttribute("onClick", "delete_click(this.id)")
 		aPlayer.appendChild(aName)
