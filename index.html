@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+#roll {
+    background-color: #008CBA; /* Green */
+    border: none;
+	width: 200px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+#addPlayer {
+    background-color: black;
+    border: none;
+	width: 200px;
+    color: white; 
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+#playerName {
+	width: 200px;
+	border: none;
+}
+.player {
+	width: 200px;
+	label {
+		width: 180px;
+	}
+}
+.delete {
+	display: inline-block;
+    width:20px;
+    height:20px;
+    border-radius: 50%;
+	border:none;
+    background-color:#f44336;
+	color:white;
+    text-align:center;
+    text-decoration:none;
+    font-size:40px;
+}
+.dice{display:inline-block;min-height:1em;padding-left:1em;background-size:1em;background-repeat:no-repeat;}
+.dice-1{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cg transform='translate(113.25%2C-494.1)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-406.5%2C374.7)'%3E%3Crect x='588' y='240.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(337.5%2C87.5)' cx='325' cy='227.4' r='12.5' style='fill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+.dice-2{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(109.9%2C-505.1)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-415.6%2C485.6)'%3E%3Crect x='613' y='40.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(326.5%2C-148.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(398.5%2C-76.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+.dice-3{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(84.9%2C-515.5)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-290.6%2C514.9)'%3E%3Crect x='413' y='2.9' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(126.5%2C-186)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(198.5%2C-114)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(162.5%2C-150)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+.dice-4{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(90.7%2C-499.7)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-302.7%2C367.8)'%3E%3Crect x='425.5' y='265.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(139%2C76.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(139%2C148.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(211%2C76.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(211%2C148.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+.dice-5{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(89.2%2C-510.5)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-194.9%2C372.3)'%3E%3Crect x='213' y='277.9' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(-73.5%2C89)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-73.5%2C161)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-1.5%2C89)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-1.5%2C161)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-37.5%2C125)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E ");}
+.dice-6{background-image: url("data:image/svg+xml,%3Csvg xmlns='http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg' version='1.1' viewBox='0 0 76.5 76.5' height='21.6' width='21.6'%3E%3Cstyle%3E.s0%7Bfill%3A%23000%3Bstroke-width%3A3%3Bstroke%3A%23000%3B%7D%3C%2Fstyle%3E%3Cg transform='translate(86.2%2C-500.6)'%3E%3Cg transform='matrix(0.5%2C0%2C0%2C0.5%2C-98.2%2C356.2)'%3E%3Crect x='25.5' y='290.4' width='150' height='150' ry='50' rx='50' style='fill%3A%23fff%3Bstroke-width%3A3%3Bstroke%3A%23000'%2F%3E%3Ccircle transform='translate(-261%2C101.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-261%2C173.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-261%2C137.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C101.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C173.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3Ccircle transform='translate(-189%2C137.5)' cx='325' cy='227.4' r='12.5' class='s0'%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E");}
+</style>
+<h2 id="title">.</h2>
+<div>
+	<span style="font-size: 4em;" class="dice dice-1" id="dice1" title="Dice 1"></span>
+	<span style="font-size: 4em;" class="dice dice-3" id="dice2" title="Dice 2"></span>
+</div>
+
+<button id="roll" onClick="roll()">Roll the dice</button>
+<input type = "checkbox" id = "monopoly">1 more turn for double 6s?</input>
+<div id = "player-list"></div>
+<input type="text" id="playerName"></input>
+<button id="addPlayer" onClick="addPlayer()">Add player</button>
+
+<h2 id="next"></h2>
+
+<script>
+var player_list = []
+var roll_time = 0
+var current_index = 0
+var monopoly = false
+function addPlayer(){
+	new_player = document.getElementById('playerName').value
+	document.getElementById('playerName').value = ""
+	player_list.push(new_player)
+	renderPlayerList()	
+}
+function increment(){
+	tmp = current_index + 1
+	if(tmp==player_list.length){
+		tmp = 0
+	}
+	return tmp
+}
+var roll = function (){
+	val1 = Math.floor((Math.random() * 6) + 1);
+    val2 = Math.floor((Math.random() * 6) + 1);
+    
+    document.getElementById('dice1').setAttribute("class", "dice dice-"+val1)
+    document.getElementById('dice2').setAttribute("class", "dice dice-"+val2)
+
+	if(roll_time < 20){
+		requestAnimationFrame(roll)
+		roll_time+=1
+	}else{
+		inc = increment()
+		roll_time = 0
+		if(player_list.length>0){
+			monopoly = document.getElementById('monopoly').checked
+    	    document.getElementById('title').innerHTML = "This is " + player_list[current_index] + "'s result."
+        	if(monopoly && val1 == 6 && val2 ==6){
+				document.getElementById('next').innerHTML = "Double 6s!!! " + player_list[current_index] + "'s another turn."
+			}else{
+				document.getElementById('next').innerHTML = "Next is " + player_list[inc] + "'s turn."
+            	current_index = inc
+			}
+    	}
+	}
+}
+function renderPlayerList(){
+	var div = document.getElementById('player-list')
+	div.innerHTML = "";
+	for(i = 0; i< player_list.length; i++){
+		var aPlayer = document.createElement('div')
+		aPlayer.setAttribute("class", "player")
+		var aName = document.createElement('label')
+		aName.innerHTML = player_list[i]
+		var deleteButton = document.createElement('button')
+		deleteButton.setAttribute("class", "delete")
+		deleteButton.innerHTML = "-"
+		deleteButton.id = i
+		deleteButton.setAttribute("onClick", "delete_click(this.id)")
+		aPlayer.appendChild(aName)
+		aPlayer.appendChild(deleteButton)
+		div.appendChild(aPlayer)
+	}
+}
+
+function delete_click(id){
+	player_list.splice(id, 1)
+	renderPlayerList()
+}
+</script>
+
+</body>
+</html>
